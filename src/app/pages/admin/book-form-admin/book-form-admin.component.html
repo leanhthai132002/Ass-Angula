@@ -1,0 +1,26 @@
+<div>
+    <a routerLink="/admin/products">
+      <button class="btn btn-primary">Quay lại</button>
+    </a>
+  </div>
+  
+  <!-- Định nghĩa xem form được quản lý bởi biến nào -->
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      Tên sách <input type="text" class="form-control" formControlName="name">
+      Giá hiện tại <input type="text" class="form-control" formControlName="name">
+      Giá sale <input type="text" class="form-control" formControlName="name">
+      Mô tả <input type="text" class="form-control" formControlName="name">
+      Ảnh <input type="text" class="form-control" formControlName="name">
+      Tình trạng <br>
+      Còn hàng<input type="radio" name="status" formControlName="name">
+      Hết hàng<input type="radio" name="status" formControlName="name">
+      
+    </div>
+    <div>
+      <button
+        class="btn btn-success"
+      >Submit</button>
+    </div>
+  </form>
+  

@@ -1,0 +1,44 @@
+
+<div>
+    <a routerLink="/admin/products/create">
+      <button class="btn btn-primary">Create Book</button>
+    </a>
+  </div>
+  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Giá gốc</th>
+        <th>Giá sale</th>
+        <th>Mô tả</th>
+        <th>Ảnh</th>
+        <th>Trạng thái</th>
+        <th >Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book._id}}</td>
+        <td>{{book.name}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.sale_price}}</td>
+        <td>{{book.description}}</td>
+        <td>{{book.image_url}}</td>
+        <td>{{book.status}}</td>
+        
+        <td style="width: 250px">
+          <a routerLink="/admin/products/{{book._id}}">
+            <button class="btn btn-info">Detail</button>
+          </a>
+          <button class="btn btn-danger" (click)="onDelete(book._id)">Delete</button>
+          <!-- <a [routerLink]="['/admin', 'book', book.id]"><button>Detail</button></a> -->
+          <a routerLink="/admin/products/edit/{{book._id}}">
+            <button class="btn btn-warning">Edit</button>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
